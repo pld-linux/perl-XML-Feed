@@ -6,7 +6,7 @@
 %define	pdir	XML
 %define	pnam	Feed
 Summary:	XML::Feed - Syndication feed parser and auto-discovery
-#Summary(pl.UTF-8):	
+Summary(pl.UTF-8):	XML::Feed - analizator i automatyczne wykrywanie feedów zespolonych
 Name:		perl-XML-Feed
 Version:	0.12
 Release:	1
@@ -48,8 +48,20 @@ provide a unified API for date handling, XML::Feed converts all date
 formats transparently into DateTime objects, which it then returns
 to the caller.
 
-# %description -l pl.UTF-8
-# TODO
+%description -l pl.UTF-8
+XML::Feed to analizator feedów zespolonych w formatach RSS i Atom.
+Implementuje także automatyczne wykrywanie feedów do ich znajdowania
+dla danego URI.
+
+Celem XML::Feed jest udostępnienie jednolitego API do analizy i
+wykorzystywania różnych formatów zespolonych. Różne rodzaje RSS i Atom
+obsługują dane na różne sposoby: obsługa daty, podsumowania i treść,
+cytowanie itp. Ten moduł próbuje usunąć te różnice udostępniając
+wrapper na te formaty oraz klasy implementujące te formaty (XML::RSS i
+XML::Atom::Feed). Na przykład daty są różnie obsługiwane w każdym z
+formatów. Aby udostępnić jednolite API do obsługi dat, XML::Feed
+w sposób przezroczysty konwertuje wszystkie formaty dat do obiektów
+DateTime, które zwraca wywołującemu.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
