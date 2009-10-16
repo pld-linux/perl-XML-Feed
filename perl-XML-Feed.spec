@@ -8,13 +8,13 @@
 Summary:	XML::Feed - Syndication feed parser and auto-discovery
 Summary(pl.UTF-8):	XML::Feed - analizator i automatyczne wykrywanie feedów zespolonych
 Name:		perl-XML-Feed
-Version:	0.12
+Version:	0.43
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/XML/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	77565d61b511f7ae05623064e04e9f56
+# Source0-md5:	5368f0e7d4f1fcbfa5c34606717115af
 URL:		http://search.cpan.org/dist/XML-Feed/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -26,7 +26,7 @@ BuildRequires:	perl-DateTime-Format-W3CDTF
 BuildRequires:	perl-Feed-Find
 BuildRequires:	perl-HTML-Parser
 BuildRequires:	perl-URI-Fetch
-BuildRequires:	perl-XML-Atom >= 0.08
+BuildRequires:	perl-XML-Atom >= 0.32
 BuildRequires:	perl-XML-RSS >= 1.01
 BuildRequires:	perl-libwww
 %endif
@@ -67,17 +67,17 @@ DateTime, które zwraca wywołującemu.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Build.PL \
-	destdir=$RPM_BUILD_ROOT \
-	installdirs=vendor
-./Build
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor
+%{__make}
 
-%{?with_tests:./Build test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-./Build install
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
