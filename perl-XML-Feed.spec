@@ -8,13 +8,13 @@
 Summary:	XML::Feed - Syndication feed parser and auto-discovery
 Summary(pl.UTF-8):	XML::Feed - analizator i automatyczne wykrywanie feedów zespolonych
 Name:		perl-XML-Feed
-Version:	0.43
+Version:	0.46
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/XML/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	5368f0e7d4f1fcbfa5c34606717115af
+# Source0-md5:	3089c4a19346165d1e3692c2cd912beb
 URL:		http://search.cpan.org/dist/XML-Feed/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -25,9 +25,11 @@ BuildRequires:	perl-DateTime-Format-Mail
 BuildRequires:	perl-DateTime-Format-W3CDTF
 BuildRequires:	perl-Feed-Find
 BuildRequires:	perl-HTML-Parser
+BuildRequires:	perl-Module-Pluggable
 BuildRequires:	perl-URI-Fetch
-BuildRequires:	perl-XML-Atom >= 0.32
-BuildRequires:	perl-XML-RSS >= 1.01
+BuildRequires:	perl-XML-Atom >= 0.37
+BuildRequires:	perl-XML-LibXML >= 1.66
+BuildRequires:	perl-XML-RSS >= 1.47
 BuildRequires:	perl-libwww
 %endif
 BuildArch:	noarch
