@@ -9,7 +9,7 @@ Summary:	XML::Feed - Syndication feed parser and auto-discovery
 Summary(pl.UTF-8):	XML::Feed - analizator i automatyczne wykrywanie feedów zespolonych
 Name:		perl-XML-Feed
 Version:	0.46
-Release:	2
+Release:	3
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
