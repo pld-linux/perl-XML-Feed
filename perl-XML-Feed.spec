@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define	pdir	XML
 %define	pnam	Feed
 Summary:	XML::Feed - Syndication feed parser and auto-discovery
